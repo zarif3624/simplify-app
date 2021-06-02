@@ -5,7 +5,7 @@ import json
 
 # create the flask app
 app = Flask(__name__)
-openai.api_key = "sk-76fW0IDyvLlfAajy7kzSasurL4HCBsqwuSG209YV"
+openai.api_key = ""
 # what html should be loaded as the home page when the app loads?
 @app.route('/')
 def home():
