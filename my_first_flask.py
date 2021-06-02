@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify, render_template
+import os
+import openai
+import json
 
 # create the flask app
 app = Flask(__name__)
-
+openai.api_key = "sk-76fW0IDyvLlfAajy7kzSasurL4HCBsqwuSG209YV"
 # what html should be loaded as the home page when the app loads?
 @app.route('/')
 def home():
@@ -14,8 +17,22 @@ def home():
 def predict():
 
     # get the description submitted on the web page
-    a_description = request.form.get('description')
-    return render_template('app_frontend.html', prediction_text=a_description)
+    begin = "My second grader asked me what this passage means:\n\"\"\"\n"
+    end = "\n\"\"\"\nI rephrased it for him, in plain language a second grader can understand:\n\"\"\"\n"
+    video_text = request.form.get('description')
+    entire_text = begin + video_text + end
+    response = openai.Completion.create(
+        engine="davinci",
+        prompt= entire_text,
+        temperature=0.3,
+        max_tokens=200,
+        top_p=1,
+        frequency_penalty=0.1,
+        presence_penalty=0.1,
+        stop=["\n"]
+    )
+    print(entire_text)
+    return render_template('app_frontend.html', prediction_text=response.choices[0].text)
     #return 'Description entered: {}'.format(a_description)
 
 #@app.route('/prediction', methods=['GET', 'POST'])
