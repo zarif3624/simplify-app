@@ -48,7 +48,6 @@ def predict():
 HOST = '0.0.0.0'
 PORT = 5000
 if __name__ == "__main__":
-    if __name__ == '__main__':
     context = ('server.crt', 'server.key')
     app.run(host=HOST, port=PORT, threaded=True, debug=True, ssl_context=context)
     #app.run(debug=True)
