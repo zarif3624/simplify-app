@@ -44,5 +44,11 @@ def predict():
 #    return jsonify({'result': prediction_data})
 
 # boilerplate flask app code
+
+HOST = '0.0.0.0'
+PORT = 5000
 if __name__ == "__main__":
-    app.run(debug=True)
+    if __name__ == '__main__':
+    context = ('server.crt', 'server.key')
+    app.run(host=HOST, port=PORT, threaded=True, debug=True, ssl_context=context)
+    #app.run(debug=True)
