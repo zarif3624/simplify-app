@@ -9,7 +9,8 @@ openai.api_key = os.environ['OPEN_AI_KEY']
 # what html should be loaded as the home page when the app loads?
 @app.route('/')
 def home():
-    return render_template('app_frontend.html', prediction_text="")
+    rand_text = os.environ['TEXT']
+    return render_template('app_frontend.html', prediction_text=rand_text)
 
 # define the logic for reading the inputs from the WEB PAGE, 
 # running the model, and displaying the prediction
