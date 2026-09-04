@@ -1,13 +1,5 @@
-# my_first_flask_app
-Simple flask app with web UI. Takes text input. When button clicked it displays the text that was input.
+# simplify-app — retired
 
-To run the app:
+This project was retired on September 4, 2026. It is no longer maintained or supported. Do not run or deploy it, or use its historical setup instructions.
 
-- download al the files and keep the same folder structure.
-- in your terminal, go to the folder that contains these files
-- run `export FLASK_APP=my_first_flask.py`
-- run `flask run`
-- copy the URL that is printed in the terminal, and paste it into a browser
-
-![Screen Recording GIF of Flask App](first_flask_app_gif.gif)
-# simplify-app
+Repository retirement is in progress. External hosting shutdown, dedicated credential revocation, and repository archival have not yet been verified. Historical source remains in Git history.
